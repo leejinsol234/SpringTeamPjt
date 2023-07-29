@@ -1,0 +1,164 @@
+@charset "UTF-8";
+
+/* 헤더부분 */
+.header{width: 100%;}
+.logo{text-align: center; padding: 25px 0; background:#fff; cursor: pointer;}
+.logo img{
+   max-width: 150px; 
+   display: inline-block;
+   margin-top: 10px;}
+
+/* 바디부분 */
+/* 로그인,회원가입창 바깥부분 */
+body{
+  /* margin:0; */
+  color:#D2D2D2;
+  font:600 16px/18px 'Open Sans',sans-serif;
+  /* font-family: "mouse-300", Arial, Helvetica, sans-serif; */
+}
+
+/* 전체 로그인,회원가입창 틀 */
+/* box-sizing: 박스의 크기를 어떤 것을 기준으로 계산할지를 정하는 속성
+	ㄴ border-box: 테두리를 기준으로 크기를 정한다 */
+*,:after,:before{box-sizing:border-box}
+
+::placeholder {
+	color: #A1A1A1;
+	font-size: 14px;
+}
+
+/* 로그인,회원가입창 테두리*/
+.login-wrap{
+  width:100%;
+  margin:auto;
+  max-width:525px;
+  min-height:1000px;
+  position:relative;
+  border-radius:15px;
+  background:no-repeat center;
+  box-shadow:0 12px 15px 0 rgba(0,0,0,.24),0 17px 50px 0 rgba(0,0,0,.19);
+}
+
+/* 로그인,회원가입창 배경, 요소들의 위치 */
+.login-html{
+  width:100%;
+  height:100%;
+  position:absolute;
+  border-radius:15px;
+  padding:90px 70px 50px 70px;
+  background:rgba(239,238,238,.9); /* #efeeee: (239,238,238) */
+}
+
+/* 로그인, 회원가입 글자 위치 */
+.login-html .sign-in-htm,
+.login-html .sign-up-htm{
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  position:absolute;
+  transform:rotateY(180deg); /* 변경을 부드럽게 표현하기 위해 duration(지속시간)을 부여하여 속도를 조절 */
+  backface-visibility:hidden; /* 요소의 뒷쪽에서 앞면이 보이게 할지 정하는 속성
+  								 체크박스에 체크하면 박스가 180도 회전*/
+  transition:all .4s linear;
+}
+
+/* 로그인, 회원가입 버튼(라디오 버튼 제거) */
+.login-html .sign-in,
+.login-html .sign-up{
+  display:none;
+}
+
+/* 로그인, 회원가입 버튼 */
+.login-html .tab{
+  font-size:22px;
+  margin-right:15px;
+  padding-bottom:5px;
+  margin:0 15px 10px 0;
+  display:inline-block;
+  border-bottom:2px solid transparent;
+}
+
+/* 로그인, 회원가입 버튼 눌렀을 때*/
+.login-html .sign-in:checked + .tab,
+.login-html .sign-up:checked + .tab{
+  color:#000;
+  border-color:#7b7b7b;
+}
+
+/* 로그인 입력 창 */
+.login-form{
+  min-height:345px;
+  position:relative;
+  perspective:920px;
+  transform-style:preserve-3d;
+}
+
+.login-form .group{
+  margin-bottom:15px;
+}
+
+/* 입력 창 */
+.login-form .group .input{	
+  	color:#000;  		
+}
+
+/* 입력 창 */
+/* 버튼 */
+.login-form .group .input,
+.login-form .group .button{
+  width:100%;
+  display:#000;
+  border:none;
+  padding:15px 20px;
+  border-radius:25px;
+  background:rgba(0,0,0,.1);
+}
+
+/* password 입력 모양 */
+.login-form .group input[data-type="password"]{
+  text-security:circle;
+  -webkit-text-security:circle;
+}
+
+/* 입력창 위의 라벨정보 */
+.login-form .group .label{
+  color:#7b7b7b;
+  font-size:12px;
+}
+
+/* 회원가입, 로그인 버튼 */
+.login-form .group .button{
+  background:#7b7b7b;
+  cursor: pointer;
+  text-align: center;
+  color:#fff;
+}
+
+/* CSS3의 transform 속성으로 요소를 회전하거나 확대/축소하거나 비트는 등 형태를 변형*/
+.login-html .sign-in:checked + .tab + .sign-up + .tab + .login-form .sign-in-htm{
+  transform:rotate(0);
+}
+
+.login-html .sign-up:checked + .tab + .login-form .sign-up-htm{
+  transform:rotate(0);
+}
+
+/* 입력 글씨 크기 */
+.login-form .group .input {
+	font-size: 17px;
+}
+
+/* 입력칸 밑(에러or가능 문구 표시영역) */
+.check_form {
+	line-height: 1.5em;
+	text-indent: 1.3em;
+	font-size: 14px;
+}
+
+/* 입력칸과 전송 버튼 사이의 줄 */
+.hr{
+  height:2px;
+  margin:40px 0 40px 0;
+  background:rgba(123,123,123,.2);
+}

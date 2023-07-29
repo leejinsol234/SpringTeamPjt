@@ -1,0 +1,315 @@
+@charset "UTF-8";
+*{margin: 0; padding: 0; box-sizing: border-box; list-style:none}
+
+	
+header{
+	box-shadow: 0 0 10px rgba(0,0,0,0.1);
+	height: 110px;
+	width: 100%;
+	left: 0; 
+	top: 0;
+	display: flex;
+	justify-content: center;
+	}
+	
+.logo{
+	display: inline-block;
+	/* position: absolute; */
+	/* top: 10px; */
+	border: none; 
+	margin-right: 150px;
+	cursor: pointer;
+}
+.logo img{
+   max-width: 150px; 
+   display: inline-block;
+ /*   margin-top: 10px; */}
+
+.common{
+	width: 80px;
+	height: 80px;
+	background: #efeeee;
+	margin-top: 10px;
+	display: inline-block;
+	margin-right: 150px;
+	position: relative;
+	border-radius: 35%; 
+	border: #fff; 
+	box-shadow: -10px -10px 20px rgba(250,251,255,0.7), 6px 6px 16px rgba(209,205,199,1.7); 
+	border: none; 
+	outline: none; 
+	cursor: pointer; 
+	overflow: hidden;
+}
+		
+.abm{
+	margin-right: 0px;}
+
+.common img{
+	width: 60px;
+	display: block; 
+	margin: 10px auto;
+	transition: all 0.5s;
+	}
+	
+.common .hov_txt{
+	display: none; 
+	font-size: 25px; 
+	transition: all 0.5s; 
+	width: 100%; 
+	height: 100%; 
+	background: rgba(134,134,134,0.5); 
+	position: absolute; 
+	left: 0; 
+	top: 0; 
+	transition: all 0.5s; 
+	justify-content: center; 
+	align-items: center; 
+	backdrop-filter: blur(2px);
+	}
+
+.common .hov_txt p{
+	color: #fff;
+	}
+	
+.common:hover .hov_txt{
+	display: flex;
+}
+
+.container{
+	position: relative;
+	display: flex;	
+}
+h1 {
+	margin-top: 50px;
+}
+/* 게시판 css */
+.board_mainbox {
+	width: 60%;
+	height: 55%;
+	margin: 0% 20% 3% 20%;
+	/* background-color: #dbffff; */
+	border-radius: 6px;
+	display: flex;
+	justify-content: center;
+	align-content: center;
+}
+
+.insert_form {
+	background-color: #fff;
+	border-radius: 6px;
+	width: 400px;
+	height: 600px;
+	display: inline-block;
+	display: flex;
+	flex-direction: column;
+	/* box-shadow: 5px 5px 5px rgb(91, 81, 81);
+	margin: 1% 5% 5% 5%;
+	border: 1px solid #e2e2e2; */
+}
+.insert_form2	 {
+	background-color: #fff;
+	border-radius: 6px;
+	width: 400px;
+	height: 600px;
+	display: inline-block;
+	display: flex;
+	flex-direction: column;
+	/* box-shadow: 5px 5px 5px rgb(91, 81, 81);
+	margin: 1% 5% 5% 5%;
+	border: 1px solid #e2e2e2; */
+}
+
+#nickname {
+	border-style: none;
+	margin: 17px 0px 15px 18px;
+	font-size: 30px;
+	width: auto;
+}
+#nickname:focus {
+	outline: none;
+}
+
+.img_box {
+	width: 90%;
+	height: 600px;
+	background-color: #e9e9e9;
+	margin: 0 20px;
+	border-radius: 6px;
+	border: 0.5px solid black;
+}
+
+.img_box img {
+	display: block;
+	width: 100%;
+	height: 100%;
+	border-radius: 6px;
+	object-fit: fill;
+}
+
+.upload_box {
+	display: flex;
+	justify-content: end;
+	align-items: center;
+	margin: 5px 0px 5px 0px;
+}
+/* input[type=file] css */
+/* label css 추가 */
+.upload_box label {
+	display: inline-block;
+	padding: .5em .75em;
+	margin: 5px 20px 5px 5px;
+	color: #999;
+	font-size: inherit;
+	line-height: normal;
+	vertical-align: middle;
+	background-color: #fdfdfd;
+	cursor: pointer;
+	border: 1px solid #ebebeb;
+	border-bottom-color: #e2e2e2;
+	border-radius: .25em;
+	transition: all 0.5s;
+}
+
+.upload_box label:hover {
+	background-color: #dbffff;
+	color: #79cef2;
+}
+/* input 버튼 숨기기 */
+.upload_box input[type="file"] {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	border: 0;
+}
+/* 파일의 이름 나오게 하기 위함 */
+.upload_box .upload_name {
+	display: inline-block;
+	padding: .5em .75em; /* label의 패딩값과 일치 */
+	font-size: inherit;
+	font-family: inherit;
+	line-height: normal;
+	vertical-align: middle;
+	background-color: white;
+	border: 1px solid #ebebeb;
+	border-bottom-color: #e2e2e2;
+	border-radius: .25em;
+	appearance: none; /* 네이티브 외형 감추기 */
+}
+
+.brand_box {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.brand_box button {
+	width: 80px;
+	height: 50px;
+	border-radius: 6px;
+	transition: all 0.5s;
+	border-style: none;
+	background-color: #808080;
+	margin: 15px 5px 15px 5px;
+}
+
+#b1:hover {
+	background-color: #ffd0ff;
+	cursor: pointer;
+}
+#b1:focus {
+	outline: 2px solid #ffd0ff;
+	outline-offset: 3px;
+	background-color: #ffd0ff;
+}
+#b2:hover {
+	background-color: #6e6e6e;
+	cursor: pointer;
+}
+#b2:focus {
+	outline: 2px solid #6e6e6e;
+	outline-offset: 3px;
+	background-color: #6e6e6e;
+}
+#b3:hover {
+	background-color: #79cef2;
+	cursor: pointer;
+}
+#b3:focus {
+	outline: 2px solid #79cef2;
+	outline-offset: 3px;
+	background-color: #79cef2;
+}
+#b4:hover {
+	background-color: black;
+	cursor: pointer;
+}
+#b4:focus {
+	outline: 2px solid black;
+	outline-offset: 3px;
+	background-color: #c0c0c0;
+}
+#b5:hover {
+	background-color: orange;
+	cursor: pointer;
+}
+#b5:focus {
+	outline: 2px solid orange;
+	outline-offset: 3px;
+	background-color: orange;
+}
+
+#content {
+	border-radius: 6px;
+	width: 90%;
+	height: 250px;
+	margin: 68px 18px 5px 18px;
+	font-size: 25px;
+	resize: none;
+	border-color: #999;
+}
+
+#content:focus {
+	outline: none;
+}
+
+.btn_box {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 30px;
+}
+.btn_box button {
+	width: 60px;
+	height: 40px;
+}
+
+.btn_box button:hover {
+	background-color: #808080;
+}
+
+#uploadbtn {
+	margin: 0px 5px 0px 0px;
+	border-radius: 6px;
+	border: 1px solid #6e6e6e;
+	cursor: pointer;
+}
+#uploadbtn .fa-pen {
+	width: 50px;
+	height: 30px;
+}
+
+.cancle_btn {
+	margin: 0px 0px 0px 5px;
+	border-radius: 6px;
+	border: 1px solid #6e6e6e;
+	cursor: pointer;
+}
+.cancle_btn .fa-xmark {
+	width: 50px;
+	height: 30px;
+}

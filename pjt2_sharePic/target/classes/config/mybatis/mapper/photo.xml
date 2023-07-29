@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="p">
+	<insert id="insert" parameterType="java.util.Map">
+		insert into pro_photo values(
+					seq_photo_num.nextVal,
+					#{photo_name},
+					#{member_idx},
+					sysdate,
+					#{brand_num},
+					seq_board_id.currVal
+		)
+	</insert>
+		<!-- 게시물 1건 삭제 -->	
+	<delete id="delete" parameterType="int">
+		delete from pro_photo where board_id = #{board_id}
+	</delete>
+</mapper>

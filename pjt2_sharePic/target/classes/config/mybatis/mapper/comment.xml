@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="bc">
+	<insert id="insert" parameterType="comment">
+		insert into b_comment values(
+					seq_idx.nextVal, <!-- idx -->
+					0,				 <!-- answernum -->
+					#{content},		 <!-- content -->
+					sysdate,		 <!-- regdate -->
+					0,				 <!-- parentnum -->
+					seq_ref.nextVal, <!-- ref -->
+					0,				 <!-- reforder -->
+					0,				 <!-- step -->
+					0,				 <!-- like_B -->
+					#{board_id},	 <!-- board_id -->
+					#{member_idx},	 <!-- member_idx -->
+					#{ip}			 <!-- ip -->
+		)
+	</insert>
+	
+	<!-- 
+	It's likely that neither a Result Type nor a Result Map was specified.
+	resultType을 정해주지 않아서 생긴 오류
+	 -->
+	<select id="selectboard_id" parameterType="int" resultType="comment">
+		SELECT * 
+		FROM B_COMMENT bc
+		LEFT OUTER JOIN PRO_MEMBER pm
+		ON bc.MEMBER_IDX = pm.MEMBER_IDX
+		WHERE BOARD_ID = #{board_id} order by ref desc, reforder asc
+	</select>
+	
+	<!-- 대댓글을 달기 위해 해당 ref에 해당하는 게시글 찾아오기 -->
+	<select id="selectOne" parameterType="int" resultType="comment">
+		select * from b_comment where idx = #{idx}
+	</select>
+	<!-- 대댓글 저장하기 -->
+	<insert id="reply_insert" parameterType="comment">
+		insert into b_comment values(
+					seq_idx.nextVal,		<!-- idx -->
+					0,						<!-- answernum -->
+					#{content},				<!-- content -->
+					sysdate,				<!-- regdate -->
+					#{parentnum},			<!-- parentnum -->
+					#{ref},					<!-- ref -->
+					seq_reforder.nextVal,	<!-- reforder -->
+					#{step},				<!-- step -->
+					0,						<!-- like_b -->
+					#{board_id},			<!-- board_id -->
+					#{member_idx},			<!-- member_idx -->
+					#{ip}					<!-- ip -->
+		)
+	</insert>
+	
+	<!-- 대댓글 저장 후 부모댓글의 answernum +1 증가 -->
+	<update id="update_answernum" parameterType="int">
+		update b_comment
+		set answernum = answernum + 1
+		where idx = #{idx}
+	</update>
+	
+	<!-- 댓글 삭제 -->
+	<delete id="delete" parameterType="int">
+		delete from b_comment
+		where idx = #{idx}
+	</delete>
+	
+	<!-- 좋아요 수 증가 -->
+	<update id="count_plus" parameterType="int">
+		update b_comment
+		set like_b = like_b + 1
+		where idx = #{idx}
+	</update>
+	
+	<!-- 좋아요 수 감소 -->
+	<update id="count_minus" parameterType="int">
+		update b_comment
+		set like_b = like_b - 1
+		where idx = #{idx}
+	</update>
+	
+	<delete id="deleteonBoard" parameterType="int">
+		delete from b_comment
+		where board_id = #{board_id}
+	</delete>
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+

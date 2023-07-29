@@ -1,0 +1,264 @@
+@charset "UTF-8";
+*{margin: 0; padding: 0; box-sizing: border-box; list-style:none}
+
+	
+header{
+	box-shadow: 0 0 10px rgba(0,0,0,0.1);
+	height: 110px;
+	width: 100%;
+	left: 0; 
+	top: 0;
+	display: flex;
+	justify-content: center;
+	}
+	
+.logo{
+	display: inline-block;
+	/* position: absolute; */
+	/* top: 10px; */
+	border: none; 
+	margin-right: 150px;
+	cursor: pointer;
+}
+.logo img{
+   max-width: 150px; 
+   display: inline-block;
+ /*   margin-top: 10px; */}
+
+.common{
+	width: 80px;
+	height: 80px;
+	background: #efeeee;
+	margin-top: 10px;
+	display: inline-block;
+	margin-right: 150px;
+	position: relative;
+	border-radius: 35%; 
+	border: #fff; 
+	box-shadow: -10px -10px 20px rgba(250,251,255,0.7), 6px 6px 16px rgba(209,205,199,1.7); 
+	border: none; 
+	outline: none; 
+	cursor: pointer; 
+	overflow: hidden;
+}
+		
+.abm{
+	margin-right: 0px;}
+
+.common img{
+	width: 60px;
+	display: block; 
+	margin: 10px auto;
+	transition: all 0.5s;
+	}
+	
+.common .hov_txt{
+	display: none; 
+	font-size: 25px; 
+	transition: all 0.5s; 
+	width: 100%; 
+	height: 100%; 
+	background: rgba(134,134,134,0.5); 
+	position: absolute; 
+	left: 0; 
+	top: 0; 
+	transition: all 0.5s; 
+	justify-content: center; 
+	align-items: center; 
+	backdrop-filter: blur(2px);
+	}
+
+.common .hov_txt p{
+	color: #fff;
+	}
+	
+.common:hover .hov_txt{
+	display: flex;
+}
+
+.container{
+	position: relative;
+	display: flex;	
+}
+
+.go_to_board {
+    height: 40px;
+    width: 40px;
+    background-color: #fff;
+    border-style: none;
+    margin-left: 150px;
+}
+.go_to_board .fa-arrow-left {
+	width: auto;
+	height: auto;
+}
+.go_to_board .fa-arrow-left:hover {
+	color: gray;
+	cursor: pointer;
+}
+/* 브렌드 버튼 */
+/* .brand_btn {
+	border: none;
+	display: flex;
+ 	justify-content: space-around;
+	position: relative;
+	top: 40px;
+	width: 80%;
+} */
+
+
+/* #b1{
+	border: none;
+	background-color: #fff;
+	
+}
+
+#b2{
+	border: none;
+	background-color: #fff;
+}
+
+#b3{
+	border: none;
+	background-color: #fff;
+}
+
+#b4{
+	border: none;
+	background-color: #fff;
+}
+
+#b5{
+	border: none;
+	background-color: #fff;
+}
+ */
+
+/* 게시판 css */
+
+#title {
+	margin-top: 50px;
+}
+.board_mainbox {
+	width: 90%;
+	height: auto;
+	background-color: #fff;
+	margin: 0% 5% 0% 5%;
+	border-radius: 6px;
+	display: flex;
+	flex-direction: column;
+}
+
+.brand_btn_box {
+	display: flex;
+	align-items: center;
+	justify-content: center;	
+	margin-bottom: 5px;
+}
+.send_box {
+	display: flex;
+	justify-content: center;
+}
+.send_btn {
+	width: 100px;
+	height: 40px;
+	margin: 50px 0px 20px 0px;
+	background-color: #808080;
+	border-style: none;
+	border-radius: 6px;
+	transition: 0.5s;
+	font-size: 15px
+}
+
+.send_btn:hover {
+	cursor: pointer;
+	background-color: #c0c0c0;
+	color: #fff;
+}
+
+.board_box {
+	width: 90%;
+	height: 600px;
+	margin: 5px 5% 0px 5%;
+	border-radius: 6px;
+/* 	display: flex;
+	flex-wrap: wrap; */
+ 	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	overflow: scroll;
+	justify-items: center;
+}
+.board_box::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera*/
+}
+.logo_img_box {
+	width: 100px;
+	height: 30px;
+	margin-bottom: 5px;
+}
+.logo_img_box img{
+	width: 100%;
+	height: 100%;
+	object-fit: fill;
+}
+.board {
+	background-color: #fff;
+	border-radius: 6px;
+	width: auto;
+	height: fit-content;
+	margin: 1% 1% 1% 1%;
+	display: inline-block;
+	/* display: flex; */
+	flex-direction: column;
+	padding-top: 20px;
+}
+.board:hover {
+	opacity: 0.8;
+	cursor: pointer;
+}
+.img {
+	border-radius: 6px;
+	width: auto;
+	height: auto;
+	margin: 0px 10px 0px 14px;
+}
+.img img {
+	display: block;
+	width: 100%;
+	height: 100%;
+	border-radius: 6px;
+	object-fit: fill;
+}
+.like_wrap{
+	display: flex;
+	justify-content: space-between;
+	position: relative;
+}
+
+#nickname{
+	margin-left: 20px;
+	margin-top: 15px;
+	
+}
+
+.like_main_box {
+	display: float;
+	
+}
+.fa-heart {
+	width: 20px;
+	height: 20px;
+	color: red;
+	margin-top: 15px;
+	/* margin-right: 10px; */
+}
+.like_b_box {
+	border-style: none;
+	width: 20px;
+	height: 20px;
+	font-size: large;
+	background-color: #fff;
+}
+.like_b_box:focus {
+	outline: none;
+}

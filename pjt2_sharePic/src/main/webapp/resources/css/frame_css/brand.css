@@ -1,0 +1,175 @@
+@charset "UTF-8";
+*{margin: 0; padding: 0; box-sizing: border-box; list-style:none}
+
+	
+header{
+	box-shadow: 0 0 10px rgba(0,0,0,0.1);
+	height: 110px;
+	width: 100%;
+	left: 0; 
+	top: 0;
+	display: flex;
+	justify-content: center;
+	}
+	
+.logo{
+	display: inline-block;
+	/* position: absolute; */
+	/* top: 10px; */
+	border: none; 
+	margin-right: 150px;
+	cursor: pointer;
+}
+.logo img{
+   max-width: 150px; 
+   display: inline-block;
+ /*   margin-top: 10px; */}
+
+.common{
+	width: 80px;
+	height: 80px;
+	background: #efeeee;
+	margin-top: 10px;
+	display: inline-block;
+	margin-right: 150px;
+	position: relative;
+	border-radius: 35%; 
+	border: #fff; 
+	box-shadow: -10px -10px 20px rgba(250,251,255,0.7), 6px 6px 16px rgba(209,205,199,1.7); 
+	border: none; 
+	outline: none; 
+	cursor: pointer; 
+	overflow: hidden;
+}
+		
+.abm{
+	margin-right: 0px;}
+
+.common img{
+	width: 60px;
+	display: block; 
+	margin: 10px auto;
+	transition: all 0.5s;
+	}
+	
+.common .hov_txt{
+	display: none; 
+	font-size: 25px; 
+	transition: all 0.5s; 
+	width: 100%; 
+	height: 100%; 
+	background: rgba(134,134,134,0.5); 
+	position: absolute; 
+	left: 0; 
+	top: 0; 
+	transition: all 0.5s; 
+	justify-content: center; 
+	align-items: center; 
+	backdrop-filter: blur(2px);
+	}
+
+.common .hov_txt p{
+	color: #fff;
+	}
+	
+.common:hover .hov_txt{
+	display: flex;
+}
+
+.container{
+	position: relative;
+	display: flex;	
+}
+
+/* 브렌드 버튼 */
+.btn{
+	 border: none;
+	 display: flex;
+	 justify-content: center;
+	 position: relative;
+	 top: 70px;
+	} 
+#b1{
+	border: none;
+	margin-right:50px;
+	width: 250px;
+	height: 250px;
+	border-radius: 100%;
+	
+	}	
+#b2{
+	border: none;
+	width: 250px;
+	height: 250px;
+	border-radius: 100%;
+	margin-right:50px;
+	}
+#b3{
+	border: none;
+	width: 250px;
+	height: 250px;
+	border-radius: 100%;
+	margin-right:50px;
+	}
+#b4{
+	border: none;
+	width: 250px;
+	height: 250px;
+	border-radius: 100%;
+	margin-right:50px;
+	}
+#b5{
+	border: none;
+	width: 250px;
+	height: 250px;
+	border-radius: 100%;
+	}
+
+/* 브렌드별 프레임 */
+.content{
+    width: 100%;
+}
+
+.frame{
+	display: flex;
+	flex-wrap: wrap;
+	position: relative;
+	align-items: flex-start;
+	justify-content: center;
+	gap: 1em;
+	margin-top: 130px;
+	}
+
+.image{
+	display: inline-block;
+	position: relative;
+}
+.image img{
+    max-height: 700px;
+    flex-basis: 150px;
+    flex-grow: 1;
+	}
+
+.image .img_txt{
+	display: none; 
+	font-size: 15px; 
+	transition: all 0.5s; 
+	width: 100%; 
+	height: 100%; 
+	background: rgba(0,0,0,0.3); 
+	position: absolute; 
+	left: 0; 
+	top: 0; 
+	transition: all 0.5s; 
+	justify-content: center; 
+	align-items: center; 
+	}
+
+.image .img_txt p{
+	color: #fff;
+	}
+
+.image:hover .img_txt{
+	display: flex;
+	}
+

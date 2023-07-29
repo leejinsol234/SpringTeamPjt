@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="b">
+	<select id="selectList" resultType="board">
+		select * from p_board
+	</select>
+	
+	<insert id="insert" parameterType="java.util.Map">
+		insert into p_board values(
+					seq_board_id.nextVal,
+					#{content},
+					sysdate,
+					0,
+					#{member_idx},
+					#{ip}
+		)
+	</insert>
+	
+	<!-- 1건의 게시물 조회 -->
+	<select id="selectOne" resultType="board" parameterType="int">
+		select * from p_board where board_id = #{board_id}
+	</select>
+	<!-- 게시물 1건 삭제 -->	
+	<delete id="delete" parameterType="int">
+		delete from p_board where board_id = #{board_id}
+	</delete>
+	<!-- 좋아요 수 증가 -->
+	<update id="count_plus" parameterType="int">
+		update p_board
+		set like_b = like_b + 1
+		where board_id = #{board_id}
+	</update>
+	
+	<!-- 좋아요 수 감소 -->
+	<update id="count_minus" parameterType="int">
+		update p_board
+		set like_b = like_b - 1
+		where board_id = #{board_id}
+	</update>
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
